@@ -10,10 +10,10 @@ import numpy as np
 os.environ["STREAMLI_SERVER_DEBUG"]="1"
 
 # Set Google Vision API credentials
-os.environ["Google_credential"] = "C:/Users/User/Desktop/streamlitimae/"your-gen-lang-client.json""
+os.environ["Google_credential"] = "C:/Users/User/Desktop/"your-gen-lang-client.json""
 
 # Configure Google Gemini API key
-genai.configure(api_key="")
+genai.configure(api_key="your_api_key")
 
 # Configure the Gemini model
 generation_config = {
@@ -30,7 +30,7 @@ model = genai.GenerativeModel(
 )
 
 # Connect to Neo4j
-graph = Graph("bolt://localhost:7687", auth=("neo4j", "pirateneo"))
+graph = Graph("bolt://localhost:7687", auth=("neo4j", "your_password"))
 
 # Save uploaded files locally
 def save_uploaded_file(uploaded_file):
