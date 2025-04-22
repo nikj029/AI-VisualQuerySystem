@@ -56,7 +56,6 @@ Adjust if different:
 
 **graph = Graph("bolt://localhost:7687", auth=("neo4j", "your_password"))**
 
-
 ---
 
 **Running the App**
@@ -64,4 +63,49 @@ Adjust if different:
 streamlit run your_script.py
 ```
 > Replace your_script.py with your actual file name.
+
+---
+
+**How It Works**
+
+1. Upload one or more flow diagrams.
+
+2. Gemini extracts relationships like:
+Source -> Target: Data
+
+3. These are stored in Neo4j under a user-given name or ID.
+
+
+4. When querying:
+
+The app finds top 3 most relevant relationships using TF-IDF.
+
+Gemini uses this context to give a natural language response.
+
+---
+
+
+**Example Query**
+
+**Uploaded Relationships:**
+
+AuthService -> DB: Writes credentials
+Frontend -> AuthService: Sends login data
+
+**User Query:**
+Who handles login data?
+
+**Gemini Response:**
+"The Frontend module sends login data to AuthService, which then stores credentials in the DB."
+
+
+---
+
+**Author**
+
+****Nikhil Jain****
+
+**Built with curiosity, AI, and pirate-level caffeine.**
+
+**Feel free to connect or contribute!**
 
