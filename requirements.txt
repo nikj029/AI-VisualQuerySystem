@@ -1,0 +1,6 @@
+streamlit
+google-generativeai
+py2neo
+pillow
+scikit-learn
+numpy
